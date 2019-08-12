@@ -23,16 +23,15 @@ def myCollatz(number):
 print("Hello and welcome to Scott Maccarone\'s Collatz sequence generator.")
 print("Please enter any positive integer: ")
 
-# I need to include `try` and `except` statements to handle invalid user inputs
-userInput = int(input())
-
-# Since I am not sure how long the loop needs to run, a `while` loop is the
-# best option (a `for` loop is better when you KNOW how many times the loop
-# will be executed)
-
-# The print statements in `myCollatz` return a `NoneType`. This creates an
-# error when assigning `userInput` to the output of `myCollatz` because
-# my `while` loop cannot compare a `NoneType` with 1.
+# This only works once; if the user enters an invalid value, this try/except
+# clause will not work and the program crashes. I need a way to continually
+# check if there is an error so the program will not crash even if the user
+# enters invalid values repeatedly.
+try:
+    userInput = int(input())
+except ValueError:
+    print("Oops! You entered a non-numeric value. Try again: ")
+    userInput = int(input())
 
 while userInput != 1:
     userInput = myCollatz(userInput)
