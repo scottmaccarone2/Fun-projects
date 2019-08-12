@@ -6,10 +6,16 @@
 # random number is selected from to also be random!
 
 import random
-my_num = random.randint(1,25)
-
-print("I am thinking of a number between 1 and 25.")
-print("What is your guess?")
+p1 = random.randint(1, 100)
+p2 = random.randint(1, 100)
+if p1 > p2:
+    my_num = random.randint(p2, p1)
+    print("I am thinking of a number between " + str(p2) + " and " + str(p1) + ".")
+    print("What is your guess?")
+elif p1 < p2:
+    my_num = random.randint(p1, p2)
+    print("I am thinking of a number between " + str(p1) + " and " + str(p2) + ".")
+    print("What is your guess?")
 
 # Use some kind of loop in case the user repeatedly enters invalid inputs
 try:
