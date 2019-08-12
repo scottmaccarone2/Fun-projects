@@ -1,0 +1,38 @@
+# The Collatz Sequence: Write a function named `collatz()` that has one
+# parameter named `number`. If `number` is even, then `collatz()` prints
+# `number // 2` and return this value. If `number` is odd, then `collatz()`
+# prints `3 * number + 1`.
+
+# Then write a program that lets the user type in an integer and that
+# keeps calling `collatz()` until the function returns 1.
+# NOTE: An integer `number` is even if `number % 2 == 0` and it's odd if
+# `number % 2 == 1`.
+
+# NOTE: Add `try` and `except` statements to this project to detect whether
+# the user types in a non-integer string. The `int()` function will raise a
+# `ValueError` error is this happens.
+
+def myCollatz(number):
+    if number % 2 == 0:
+        print(number // 2)
+        return number // 2
+    elif number % 2 == 1:
+        print(3 * number + 1)
+        return 3 * number + 1
+
+print("Hello and welcome to Scott Maccarone\'s Collatz sequence generator.")
+print("Please enter any positive integer: ")
+
+# I need to include `try` and `except` statements to handle invalid user inputs
+userInput = int(input())
+
+# Since I am not sure how long the loop needs to run, a `while` loop is the
+# best option (a `for` loop is better when you KNOW how many times the loop
+# will be executed)
+
+# The print statements in `myCollatz` return a `NoneType`. This creates an
+# error when assigning `userInput` to the output of `myCollatz` because
+# my `while` loop cannot compare a `NoneType` with 1.
+
+while userInput != 1:
+    userInput = myCollatz(userInput)
