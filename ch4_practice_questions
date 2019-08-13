@@ -1,0 +1,83 @@
+# "Automate the Boring Stuff With Python" by Al Sweigart
+# Chapter 4: Lists
+# Practice Questions
+
+# 1. What is []?
+# ANS: This is the empty list (a list with no elements)
+
+# 2. How would assign the value 'hello' as the third value in a list stored
+# in a variable named `spam`? (Assume `spam` contains [2, 4, 6, 8, 10].)
+# ANS: spam.insert(2, 'hello')
+
+# For questions 3 - 5, suppose `spam` contains the list ['a', 'b', 'c', 'd']
+
+# 3. What does `spam[int(int('3' * 2) // 11)]` evaluate to?
+# ANS: '3' * 2 evaluates to '33' (write the string '3' twice). That string is
+# then converted into the integer 33. The integer (floored) division by 11
+# occurs resulting in 3. Thus we have `spam[3]` which will return `d`. NOTE:
+# the outer-most `int()` usage is NOT needed (redundant) because we are using
+# `//` - integer division, which returns an integer anyways.
+
+# 4. What does `spam[-1]` evaluate to?
+# ANS: spam[-1] = 'd'
+
+# 5. What does `spam[:2]` evaluate to?
+# ANS: spam[:2] = ['a', 'b']
+
+# For questions 6 - 8, suppose `bacon` contains the list
+# [3.14, 'cat', 11, 'cat', True]
+
+# 6. What does `bacon.index('cat')` evaluate to?
+# ANS: bacon.index('cat') = 1 (the first instance of 'cat')
+
+# 7. What does `bacon.append(99)` make the list value in `bacon` look like?
+# ANS: bacon.append(99) makes `bacon` now look like
+# [3.14, 'cat', 11, 'cat', True, 99]
+
+# 8. What does `bacon.remove('cat')` make the list value in `bacon` look like?
+# ANS: [3.14, 11, 'cat', True, 99]
+
+# 9. What are the operators for list concatenation and list replication?
+# ANS: + and *
+
+# 10. What is the difference between the `append()` and `insert()` list methods?
+# ANS: `append()` adds the item to the end of the list; whereas `insert()`
+# adds the item in a specified location determined by the index that is
+# inputted along with the item.
+
+# 11. What are two way s to remove values from a list?
+# ANS: First, there is `list.remove(item)` which removes the first instance
+# of that item. This method is particularly handy when you know what the item
+# is that you want to remove. The second option is the `del list[index]`
+# method which removes an item at a specified index. This method is handy
+# when you know the index of the item that you want removed.
+
+# 12. Name a few ways that list values are similar to string values?
+# ANS: Both values can access specific entries with list[index] and
+# string[index]. Both values can return parts of the value using slicing like
+# list[index1:index2] and string[index1:index2]. We can use both in `for` loops,
+# `in` and `not in` statements. Both can be passed into the `len()` function,
+# and both can be concatenated and replicated.
+
+# 13. What is the difference between lists and tuples?
+# ANS: Lists are mutable, meaning they can be changed in place; tuples are
+# immutable, meaning once a tuple is assigned, it cannot be changed except
+# through slicing and concatenation.
+
+# 14. How do you type the tuple value that has just the integer value 42 in it?
+# ANS: myTuple = (42,)
+
+# 15. How can you get the tuple form of a list value? How can you get the list
+# form of a tuple value?
+# ANS: Use `tuple(myList)` to obtain the tuple form of a list.
+# Use `list(myTuple)` to obtain the list form of a tuple.
+
+# 16. Variables that "contain" list values don't actually contain lists
+# directly. What do they contain instead?
+# ANS: These variables contain a reference to the list
+
+# 17. What is the difference between `copy.copy()` and `copy.deepcopy()`?
+# ANS: Use `copy.copy()` when you want to make a copy of the actual list
+# (not just the reference to the list) which contains individual items.
+# `copy.deepcopy()` is used for the same purpose but for lists that contain
+# other lists.
