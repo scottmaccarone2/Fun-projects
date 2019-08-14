@@ -1,0 +1,46 @@
+# Character Picture Grid
+# Suppose you have a list of lists where each value in the inner lists is a
+# one-character string, like this:
+# grid = [['.', '.', '.', '.', '.', '.'],
+#         ['.', '0', '0', '.', '.', '.'],
+#         ['0', '0', '0', '0', '.', '.'],
+#         ['0', '0', '0', '0', '0', '.'],
+#         ['.', '0', '0', '0', '0', '0'],
+#         ['0', '0', '0', '0', '0', '.'],
+#         ['0', '0', '0', '0', '.', '.'],
+#         ['.', '0', '0', '.', '.', '.'],
+#         ['.', '.', '.', '.', '.', '.']
+#        ]
+# Think of `grid[x][y]` as being the character at the x- and y-coordinates
+# of a "picture" drawn with text characters. The (0,0) origin will be in the
+# upper-left corner, the x-coordinates increase going right, and the y-
+# coordinates increase going down.
+
+# Write code that uses `grid` to print the image.
+
+# NOTE: Use a loop in a loop to print `grid[0][0]`, then `grid[1][0]`, then
+# `grid[2][0]`, and so on until `grid[8][0]`. This finishes the first row and
+# you should print a newline (using the `end` keyword in `print()`). The
+# program should now go on to print `grid[0][1]`, then `grid[1][1]`, then
+# `grid[2][1]`. The last entry the program must print is `grid[8][5]`.
+
+grid = [['.', '.', '.', '.', '.', '.'],
+        ['.', '0', '0', '.', '.', '.'],
+        ['0', '0', '0', '0', '.', '.'],
+        ['0', '0', '0', '0', '0', '.'],
+        ['.', '0', '0', '0', '0', '0'],
+        ['0', '0', '0', '0', '0', '.'],
+        ['0', '0', '0', '0', '.', '.'],
+        ['.', '0', '0', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.']
+       ]
+
+# len(grid) tells us how many "rows" (list items) there are in `grid`
+# len(grid[0]) tells us how many "columns" (number of entries each list item
+# has) there are
+
+for y in range(len(grid[0])):
+    transpose = ''
+    for x in range(len(grid)):
+        transpose = transpose + grid[x][y]
+    print(transpose, end='\n')
